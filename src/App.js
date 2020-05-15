@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import Price from './components/Price';
 import Order from './components/Order'
-import { Route, Router, Switch } from 'react-router-dom'
-import Error from './components/Error'
-import OrderConfirmation from './components/OrderConfirmation'
-import history from './components/history'
+import { Route, Router, Switch } from 'react-router-dom';
+import Error from './components/Error';
+import OrderConfirmation from './components/OrderConfirmation';
+import history from './components/history';
+import Auth from './components/Auth';
 
 
 class App extends Component {
@@ -37,6 +38,7 @@ class App extends Component {
             <Route exact path="/" render={(props) => (<Price pricing={this.state.pricing} />)} />
             <Route path="/Order" render={(props) => (<Order userInfo={this.userInfo} />)} />/>
             <Route path="/OrderConfirmation" component={OrderConfirmation} />
+            <Route path="/Auth" component={Auth} />
             <Route component={Error} />
           </Switch>
         </Router>
